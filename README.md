@@ -129,8 +129,6 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
 </table>
 
 <br>
-<br>
-<br>
 
 ### Relaxed Score
 
@@ -387,4 +385,10 @@ This project is released under the [MIT license](LICENSE).
 If you find our work helpful, please consider giving us a ⭐ and citing our paper:
 
 ```bibtex
+@article{GenExam,
+  title={GenExam: A Multidisciplinary Text-to-Image Exam},
+  author = {Wang, Zhaokai and Yin, Penghao and Zhao, Xiangyu and Tian, Changyao and Qiao, Yu and Wang, Wenhai and Dai, Jifeng and Luo, Gen},
+  journal={arXiv preprint arXiv:2509.xxxxx},
+  year={2025}
+}
 ```
