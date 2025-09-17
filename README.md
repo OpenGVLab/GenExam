@@ -3,7 +3,7 @@
 # <img src="assets/logo_no_text.png" alt="logo" height="45"/> GenExam: A Multidisciplinary Text-to-Image Exam
 
 [Zhaokai Wang](https://www.wzk.plus/)\*,
-[Penghao Yin]()\*,
+[Penghao Yin](https://penghaoyin.github.io/)\*,
 [Xiangyu Zhao](https://scholar.google.com/citations?user=eqFr7IgAAAAJ),
 [Changyao Tian](https://scholar.google.com/citations?user=kQ3AisQAAAAJ),
 [Yu Qiao](https://scholar.google.com/citations?user=gFtI-8QAAAAJ),
@@ -222,7 +222,7 @@ Our data is stored in `data/`. You can also download them from [Huggingface](htt
 
 ### 1. Prerequisites
 
-1. Install requirements: `pip install requests tqdm`
+1. Install requirements: `pip install requests tqdm pillow`
 
 2. Set `openai_api_key` and `openai_base_url` (optional, if you want to use proxy) in `run_eval.py` for the gpt-5-20250807 evaluator and inference of gpt-image-1.
 

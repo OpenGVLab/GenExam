@@ -4,7 +4,6 @@ import base64
 import requests
 from PIL import Image
 import io
-import pillow_avif
 import ast
 import argparse
 from tqdm import tqdm
@@ -87,6 +86,7 @@ def call_gpt5(image_path, image_path2, text_prompt, max_tokens=4096, img_size=76
         
         response_json = response.json()
         ret = response_json["choices"][0]["message"]["content"]
+        return ret
     
     
     except requests.exceptions.RequestException as e:
