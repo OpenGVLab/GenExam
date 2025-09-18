@@ -12,8 +12,8 @@
 [Gen Luo](https://scholar.google.com/citations?user=EyZqU9gAAAAJ)
 
 <p align="center">
-  <a href='https://arxiv.org/'>
-    <img src='https://img.shields.io/badge/Paper-2509.00000-brown?style=flat&logo=arXiv' alt='arXiv PDF'>
+  <a href='https://arxiv.org/abs/2509.14232'>
+    <img src='https://img.shields.io/badge/Paper-2509.14232-brown?style=flat&logo=arXiv' alt='arXiv PDF'>
   </a>
   <a href='https://huggingface.co/datasets/OpenGVLab/GenExam'>
     <img src='https://img.shields.io/badge/Huggingface-Data-blue?style=flat&logo=huggingface' alt='data img/data'>
@@ -388,7 +388,7 @@ If you find our work helpful, please consider giving us a ⭐ and citing our pap
 @article{GenExam,
   title={GenExam: A Multidisciplinary Text-to-Image Exam},
   author = {Wang, Zhaokai and Yin, Penghao and Zhao, Xiangyu and Tian, Changyao and Qiao, Yu and Wang, Wenhai and Dai, Jifeng and Luo, Gen},
-  journal={arXiv preprint arXiv:2509.xxxxx},
+  journal={arXiv preprint arXiv:2509.14232},
   year={2025}
 }
 ```
