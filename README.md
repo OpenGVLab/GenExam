@@ -34,7 +34,12 @@
 
 <br>
 
-## ⭐️ Introduction
+## ⭐️ News
+
+* [2025/10/7] Results of HunyuanImage-3.0 are updated.
+* [2025/9/18] GenExam is released!
+
+## 📖 Introduction
 
 Exams are a fundamental test of expert-level intelligence and require integrated understanding, reasoning, and generation. Existing exam-style benchmarks mainly focus on understanding and reasoning tasks, and current generation benchmarks emphasize the illustration of world knowledge and visual concepts, neglecting the evaluation of rigorous drawing exams. 
 
@@ -88,6 +93,9 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
   </tr>
   <tr>
     <td>HiDream-I1-Full</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
+  </tr>
+  <tr>
+    <td>HunyuanImage-3.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
   </tr>
   <tr>
     <td>FLUX.1 dev</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
@@ -170,6 +178,9 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
   </tr>
   <tr>
     <td>HiDream-I1-Full</td><td>16.7</td><td>17.7</td><td>13.5</td><td>27.3</td><td>36.2</td><td>15.4</td><td>24.4</td><td>18.8</td><td>21.3</td><td>31.8</td><td>22.3</td>
+  </tr>
+  <tr>
+    <td>HunyuanImage-3.0</td><td>17.0</td><td>17.2</td><td>18.8</td><td>18.7</td><td>30.4</td><td>15.5</td><td>16.9</td><td>11.7</td><td>23.9</td><td>20.4</td><td>19.1</td>
   </tr>
   <tr>
     <td>FLUX.1 dev</td><td>12.2</td><td>14.4</td><td>12.5</td><td>22.8</td><td>36.4</td><td>11.0</td><td>14.0</td><td>9.2</td><td>21.3</td><td>21.7</td><td>17.6</td>
