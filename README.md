@@ -36,6 +36,7 @@
 
 ## ⭐️ News
 
+* [2025/11/23] Gemini-3-Pro-Image-Preview (Nano Banana Pro) achieves new SOTA! (72.7 strict score and 93.7 relaxed score)
 * [2025/10/7] Results of HunyuanImage-3.0 are updated.
 * [2025/9/18] GenExam is released!
 
@@ -65,6 +66,9 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
 
   <tr>
     <th colspan="12" style="text-align:left">Closed-source Models</th>
+  </tr>
+  <tr>
+    <td>Gemini-3-Pro-Image-Preview (Nano Banana Pro)</td><td>55.6</td><td>75.2</td><td>60.2</td><td>75.6</td><td>75.8</td><td>65.7</td><td>71.2</td><td>88.3</td><td>61.5</td><td>97.6</td><td>72.7</td>
   </tr>
   <tr>
     <td>GPT-Image-1</td><td>8.0</td><td>13.2</td><td>13.5</td><td>22.8</td><td>15.9</td><td>10.3</td><td>13.1</td><td>13.0</td><td>9.3</td><td>2.4</td><td>12.1</td>
@@ -150,6 +154,9 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
 
   <tr>
     <th colspan="12" style="text-align:left">Closed-source Models</th>
+  </tr>
+  <tr>
+    <td>Gemini-3-Pro-Image-Preview (Nano Banana Pro)</td><td>86.3</td><td>95.1</td><td>88.7</td><td>95.9</td><td>96.5</td><td>91.7</td><td>95.1</td><td>97.2</td><td>91.0</td><td>99.9</td><td>93.7</td>
   </tr>
   <tr>
     <td>GPT-Image-1</td><td>52.0</td><td>66.4</td><td>53.4</td><td>74.6</td><td>73.9</td><td>55.6</td><td>65.5</td><td>65.8</td><td>52.6</td><td>67.4</td><td>62.6</td>
