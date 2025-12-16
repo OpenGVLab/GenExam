@@ -7,6 +7,8 @@ import io
 import ast
 import argparse
 from tqdm import tqdm
+from tqdm.contrib.concurrent import process_map
+from concurrent.futures import ProcessPoolExecutor
 
 from eval_prompt import prompt_for_eval
 
@@ -133,6 +135,10 @@ def eval_single(gen_img_path, gt_img_path, t2i_prompt, scoring_points):
     count = 0
     while True:
         count += 1
+        if count > 3:
+            print(f"Failed to get response from GPT-5 after {count} times")
+            raise ValueError("Failed to get response from GPT-5")
+        
         response = call_gpt5(
             image_path=gen_img_path, 
             image_path2=gt_img_path,
@@ -141,21 +147,71 @@ def eval_single(gen_img_path, gt_img_path, t2i_prompt, scoring_points):
             img_size=768,
         )
         if response is not None:
+            try:
+                response = json.loads(response.split("```json")[-1].split("```")[0])
+            except:
+                try:
+                    response = ast.literal_eval(response.split("```json")[-1].split("```")[0])
+                except:
+                    continue
+            try:
+                assert "global_evaluation" in response and "answers" in response, f"Invalid response: {response}"
+                assert len(response["answers"]) == len(scoring_points), f"Invalid number of answers: {len(response['answers'])}"
+                assert all(item["answer"] in [0, 1] for item in response["answers"]), f"Invalid answer: {response['answers']}"
+                assert "Clarity and Readability" in response["global_evaluation"] and "Logical Consistency" in response["global_evaluation"] and "Spelling" in response["global_evaluation"], f"Invalid global evaluation: {response['global_evaluation']}"
+            except:
+                continue
             break
-        if count > 3:
-            print(f"Failed to get response from GPT after {count} times")
-            raise ValueError("Failed to get response from GPT")
+        
     
-    try:
-        response = json.loads(response.split("```json")[-1].split("```")[0])
-    except:
-        try:
-            response = ast.literal_eval(response.split("```json")[-1].split("```")[0])
-        except:
-            raise ValueError(f"error parsing response: {response}")
+    
     
     return response
 
+
+def inference_and_eval_single(data, img_save_dir, eval_save_dir, data_dir, inference_function, sampled_ids):
+    json_save_path = os.path.join(eval_save_dir, f"{data['id']}.json")
+    gen_img_save_path = os.path.join(img_save_dir, f"{data['id']}.png")
+    
+    if sampled_ids is not None and data["id"] not in sampled_ids:
+        return
+    
+    if os.path.exists(json_save_path):
+        print("Skipping already evaluated data ...", data["id"])
+        return
+    
+    if os.path.exists(gen_img_save_path):
+        print(f"Image already generated: {gen_img_save_path}")
+    
+    else:
+        os.makedirs(os.path.dirname(gen_img_save_path), exist_ok=True)
+        print(f"Generating image ...")
+        assert inference_function is not None, f"Image {data['id']} has not been generated and inference function is not set"
+        inference_function(text_prompt=data["prompt"], save_path=gen_img_save_path)
+    
+    gt_img_path = os.path.join(data_dir, "images", data["image_path"])
+    
+    eval_result = eval_single(
+        gen_img_path=gen_img_save_path, 
+        gt_img_path=gt_img_path, 
+        t2i_prompt=data["prompt"], 
+        scoring_points=[item["question"] for item in data["scoring_points"]], 
+    )
+    
+    eval_result.update(data)
+    eval_result["gen_img_path"] = gen_img_save_path
+    eval_result["gt_img_path"] = gt_img_path
+    del eval_result["image_path"]
+
+    os.makedirs(os.path.dirname(json_save_path), exist_ok=True)
+    with open(json_save_path, "w") as f:
+        json.dump(eval_result, f, indent=4, ensure_ascii=False)
+    print(f"Saved eval results to {json_save_path}")
+
+
+def _inference_and_eval_single(args):
+    data, img_save_dir, eval_save_dir, data_dir, inference_function, sampled_ids = args
+    return inference_and_eval_single(data, img_save_dir, eval_save_dir, data_dir, inference_function, sampled_ids)
 
 
 
@@ -164,58 +220,39 @@ def inference_and_eval(
     eval_save_dir, 
     data_dir="./data/full", 
     inference_function=call_gpt_img_gen, 
-    start_index=0, 
-    end_index=1000,
     sampled_id_path=None,
-):
-    assert 0 <= start_index < end_index <= 1000, f"invalid start_index and/or end_index: {start_index} {end_index}"
+    max_workers=-1,
+):   
+        
     with open(os.path.join(data_dir, "annotations", "All_Subjects.jsonl"), "r") as f:
         all_data = [json.loads(line) for line in f.readlines()]
     
     if sampled_id_path is not None:
         with open(sampled_id_path) as f:
             sampled_ids = [x.strip() for x in f.readlines()]
+    else:
+        sampled_ids = None
     
-    for data in tqdm(all_data[start_index:end_index]):
-        json_save_path = os.path.join(eval_save_dir, f"{data['id']}.json")
-        gen_img_save_path = os.path.join(img_save_dir, f"{data['id']}.png")
-        
-        if sampled_id_path is not None and data["id"] not in sampled_ids:
-            continue
-        
-        if os.path.exists(json_save_path):
-            print("Skipping already evaluated data ...", data["id"])
-            continue
-        
-        if os.path.exists(gen_img_save_path):
-            print(f"Image already generated: {gen_img_save_path}")
-        
-        else:
-            os.makedirs(os.path.dirname(gen_img_save_path), exist_ok=True)
-            print(f"Generating image ...")
-            assert inference_function is not None, f"Image {data['id']} has not been generated and inference function is not set"
-            inference_function(text_prompt=data["prompt"], save_path=gen_img_save_path)
-        
-        gt_img_path = os.path.join(data_dir, "images", data["image_path"])
-        
-        eval_result = eval_single(
-            gen_img_path=gen_img_save_path, 
-            gt_img_path=gt_img_path, 
-            t2i_prompt=data["prompt"], 
-            scoring_points=[item["question"] for item in data["scoring_points"]], 
-        )
-        
-        eval_result.update(data)
-        eval_result["gen_img_path"] = gen_img_save_path
-        eval_result["gt_img_path"] = gt_img_path
-        del eval_result["image_path"]
-
     
-        os.makedirs(os.path.dirname(json_save_path), exist_ok=True)
-        with open(json_save_path, "w") as f:
-            json.dump(eval_result, f, indent=4, ensure_ascii=False)
-        print(f"Saved eval results to {json_save_path}")
-
+    if max_workers > 0:   
+        print(f"Evaluating with {max_workers} workers ...")
+        args_list = [
+            (data, img_save_dir, eval_save_dir, data_dir, inference_function, sampled_ids)
+            for data in all_data
+        ]
+        
+        with ProcessPoolExecutor(max_workers=max_workers) as executor:
+            process_map(
+                _inference_and_eval_single, 
+                args_list, 
+                max_workers=max_workers,
+                desc="Evaluating",
+            )
+            
+    else:
+        print("Evaluating without multiprocessing ...")
+        for data in tqdm(all_data):
+            inference_and_eval_single(data, img_save_dir, eval_save_dir, data_dir, inference_function, sampled_ids)
 
 
 
@@ -225,9 +262,8 @@ if __name__ == "__main__":
     parser.add_argument("--img_save_dir", type=str, default="./gen_imgs")
     parser.add_argument("--eval_save_dir", type=str, default="./eval_results")
     parser.add_argument("--run_inference", action="store_true")
-    parser.add_argument('--start_index', type=int, default=0)
-    parser.add_argument('--end_index', type=int, default=1000)
     parser.add_argument("--mini", action="store_true")
+    parser.add_argument("--max_workers", type=int, default=-1)
 
     args = parser.parse_args()
     
@@ -243,8 +279,7 @@ if __name__ == "__main__":
         eval_save_dir=args.eval_save_dir, 
         inference_function=inference_function,
         data_dir=args.data_dir,
-        start_index=args.start_index,
-        end_index=args.end_index,
         sampled_id_path=os.path.join(args.data_dir, "mini_sample_ids.txt") if args.mini else None,
+        max_workers=args.max_workers,
     )
 

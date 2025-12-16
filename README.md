@@ -244,7 +244,7 @@ Our data is stored in `data/`. You can also download them from [Huggingface](htt
 
 2. Set `openai_api_key` and `openai_base_url` (optional, if you want to use proxy) in `run_eval.py` for the gpt-5-20250807 evaluator and inference of gpt-image-1.
 
-3. Generate the images offline with your model based on the `prompt` values in `data/annotations/All_Subjects.jsonl`. Save paths should be like `gen_imgs/{id}.png`.
+3. Generate the images offline with your model based on the `prompt` values in `data/annotations/All_Subjects.jsonl`. Saved image paths should be like `gen_imgs/{id}.png`.
 
 ### 2. Run Evaluation
 
@@ -271,6 +271,13 @@ python run_eval.py --run_inference --data_dir ./data/ --img_save_dir ./gen_imgs 
 This script runs gpt-image-1 by default, which costs $185 on the full set ($160 for inference and $25 for evaluation). You can replace the `inference_function` in the script with customized function for your model's inference.
 
 
+### Speed Up with Multiprocessing
+
+Add a `--max_worker` argument to speed up with multiprocessing:
+
+```bash
+python run_eval.py --max_worker 20 --data_dir ./data/ --img_save_dir ./gen_imgs --eval_save_dir ./eval_results
+```
 
 
 ### 3. Calculate Scores
@@ -372,18 +379,6 @@ If you have already run evaluation on the full set, you can alternatively add `-
 python cal_score.py --mini --eval_results_dir ./eval_results
 ```
 
-### Speed Up Evaluation
-
-Run the two commands simultaneously with `--start_index` and `--end_index` to split the evaluation into two parts:
-
-```bash
-# in window 1
-python run_eval.py --start_index 0 --end_index 500 --data_dir ./data/ --img_save_dir ./gen_imgs --eval_save_dir ./eval_results
-# in window 2
-python run_eval.py --start_index 500 --end_index 1000 --data_dir ./data/ --img_save_dir ./gen_imgs --eval_save_dir ./eval_results
-```
-
-You can split evaluation into more parts or use `multiprocessing` for further speed-up.
 
 ## 🖼 Examples of Generated Images
 
