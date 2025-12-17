@@ -36,7 +36,7 @@
 
 ## ⭐️ News
 
-* [2025/11/23] Results of GPT-Image-1.5 are updated.
+* [2025/12/17] Results of GPT-Image-1.5 are updated.
 * [2025/11/23] Gemini-3-Pro-Image-Preview (Nano Banana Pro) achieves new SOTA! (72.7 strict score and 93.7 relaxed score)
 * [2025/10/7] Results of HunyuanImage-3.0 are updated.
 * [2025/9/18] GenExam is released!
