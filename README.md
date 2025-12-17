@@ -36,7 +36,7 @@
 
 ## ⭐️ News
 
-* [2025/12/17] Results of GPT-Image-1.5 are updated.
+* [2025/12/17] Results of GPT-Image-1.5 and Seedream-4.5 are updated.
 * [2025/11/23] Gemini-3-Pro-Image-Preview (Nano Banana Pro) achieves new SOTA! (72.7 strict score and 93.7 relaxed score)
 * [2025/10/7] Results of HunyuanImage-3.0 are updated.
 * [2025/9/18] GenExam is released!
@@ -76,6 +76,9 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
   </tr>
   <tr>
     <td>GPT-Image-1</td><td>8.0</td><td>13.2</td><td>13.5</td><td>22.8</td><td>15.9</td><td>10.3</td><td>13.1</td><td>13.0</td><td>9.3</td><td>2.4</td><td>12.1</td>
+  </tr>
+  <tr>
+    <td>Seedream 4.5</td><td>5.3</td><td>11.5</td><td>7.6</td><td>25.0</td><td>12.1</td><td>12.7</td><td>15.3</td><td>15.6</td><td>3.1</td><td>4.9</td><td>11.3</td>
   </tr>
   <tr>
     <td>Seedream 4.0</td><td>2.6</td><td>3.5</td><td>5.9</td><td>18.6</td><td>10.6</td><td>6.9</td><td>11.7</td><td>5.2</td><td>0.0</td><td>7.3</td><td>7.2</td>
@@ -169,20 +172,24 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
     <td>GPT-Image-1</td><td>52.0</td><td>66.4</td><td>53.4</td><td>74.6</td><td>73.9</td><td>55.6</td><td>65.5</td><td>65.8</td><td>52.6</td><td>67.4</td><td>62.6</td>
   </tr>
   <tr>
-    <td>Seedream 4.0</td><td>39.8</td><td>49.0</td><td>46.1</td><td>71.0</td><td>65.1</td><td>52.2</td><td>60.0</td><td>56.0</td><td>34.5</td><td>56.7</td><td>53.0</td>
-  </tr>
-  <tr>
-    <td>Imagen-4-Ultra</td><td>35.9</td><td>57.4</td><td>44.5</td><td>68.1</td><td>66.9</td><td>40.1</td><td>65.6</td><td>59.7</td><td>38.4</td><td>57.8</td><td>53.4</td>
+    <td>Seedream 4.5</td><td>44.7</td><td>63.4</td><td>48.9</td><td>75.8</td><td>67.6</td><td>57.9</td><td>69.7</td><td>67.3</td><td>38.0</td><td>55.0</td><td>58.8</td>
   </tr>
   <tr>
     <td>Gemini-2.5-Flash-Image</td><td>43.1</td><td>60.9</td><td>45.3</td><td>72.6</td><td>70.2</td><td>47.4</td><td>65.8</td><td>59.8</td><td>37.0</td><td>57.1</td><td>55.9</td>
   </tr>
   <tr>
-    <td>Seedream 3.0</td><td>18.6</td><td>21.5</td><td>18.3</td><td>32.2</td><td>38.2</td><td>15.3</td><td>26.5</td><td>12.5</td><td>21.6</td><td>29.2</td><td>23.4</td>
+    <td>Imagen-4-Ultra</td><td>35.9</td><td>57.4</td><td>44.5</td><td>68.1</td><td>66.9</td><td>40.1</td><td>65.6</td><td>59.7</td><td>38.4</td><td>57.8</td><td>53.4</td>
+  </tr>
+  <tr>
+    <td>Seedream 4.0</td><td>39.8</td><td>49.0</td><td>46.1</td><td>71.0</td><td>65.1</td><td>52.2</td><td>60.0</td><td>56.0</td><td>34.5</td><td>56.7</td><td>53.0</td>
   </tr>
   <tr>
     <td>FLUX.1 Kontext max</td><td>23.5</td><td>25.6</td><td>19.2</td><td>38.3</td><td>47.5</td><td>20.9</td><td>28.9</td><td>22.3</td><td>25.4</td><td>33.5</td><td>28.5</td>
   </tr>
+  <tr>
+    <td>Seedream 3.0</td><td>18.6</td><td>21.5</td><td>18.3</td><td>32.2</td><td>38.2</td><td>15.3</td><td>26.5</td><td>12.5</td><td>21.6</td><td>29.2</td><td>23.4</td>
+  </tr>
+
 
   <tr>
     <th colspan="12" style="text-align:left">Open-source T2I Models</th>
@@ -278,7 +285,7 @@ python run_eval.py --run_inference --data_dir ./data/ --img_save_dir ./gen_imgs 
 This script runs gpt-image-1 by default, which costs $185 on the full set ($160 for inference and $25 for evaluation). You can replace the `inference_function` in the script with customized function for your model's inference.
 
 
-### Speed Up with Multiprocessing
+#### Speed Up with Multiprocessing
 
 Add a `--max_worker` argument to speed up with multiprocessing:
 
