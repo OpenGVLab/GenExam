@@ -36,7 +36,7 @@
 
 ## ⭐️ News
 
-* [2025/12/17] Results of GPT-Image-1.5 and Seedream-4.5 are updated.
+* [2025/12/17] Results of GPT-Image-1.5, Seedream-4.5 and FLUX.2 max are updated.
 * [2025/11/23] Gemini-3-Pro-Image-Preview (Nano Banana Pro) achieves new SOTA! (72.7 strict score and 93.7 relaxed score)
 * [2025/10/7] Results of HunyuanImage-3.0 are updated.
 * [2025/9/18] GenExam is released!
@@ -79,6 +79,9 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
   </tr>
   <tr>
     <td>Seedream 4.5</td><td>5.3</td><td>11.5</td><td>7.6</td><td>25.0</td><td>12.1</td><td>12.7</td><td>15.3</td><td>15.6</td><td>3.1</td><td>4.9</td><td>11.3</td>
+  </tr>
+  <tr>
+    <td>FLUX.2 max</td><td>6.6</td><td>8.8</td><td>6.8</td><td>11.6</td><td>15.2</td><td>8.8</td><td>10.8</td><td>2.6</td><td>6.2</td><td>7.3</td><td>8.5</td>
   </tr>
   <tr>
     <td>Seedream 4.0</td><td>2.6</td><td>3.5</td><td>5.9</td><td>18.6</td><td>10.6</td><td>6.9</td><td>11.7</td><td>5.2</td><td>0.0</td><td>7.3</td><td>7.2</td>
@@ -170,6 +173,9 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
   </tr>
   <tr>
     <td>GPT-Image-1</td><td>52.0</td><td>66.4</td><td>53.4</td><td>74.6</td><td>73.9</td><td>55.6</td><td>65.5</td><td>65.8</td><td>52.6</td><td>67.4</td><td>62.6</td>
+  </tr>
+  <tr>
+    <td>FLUX.2 max</td><td>49.1</td><td>63.2</td><td>54.0</td><td>74.5</td><td>76.3</td><td>56.5</td><td>68.9</td><td>61.5</td><td>47.0</td><td>68.0</td><td>61.9</td>
   </tr>
   <tr>
     <td>Seedream 4.5</td><td>44.7</td><td>63.4</td><td>48.9</td><td>75.8</td><td>67.6</td><td>57.9</td><td>69.7</td><td>67.3</td><td>38.0</td><td>55.0</td><td>58.8</td>
