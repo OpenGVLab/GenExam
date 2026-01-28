@@ -1,6 +1,6 @@
 <div align="center">
 
-# <img src="assets/logo_no_text.png" alt="logo" height="45"/> GenExam: A Multidisciplinary Text-to-Image Exam
+# <img src="assets/logo.png" alt="logo" height="45"/> GenExam: A Multidisciplinary Text-to-Image Exam
 
 [Zhaokai Wang](https://www.wzk.plus/)\*,
 [Penghao Yin](https://penghaoyin.github.io/)\*,
@@ -36,8 +36,9 @@
 
 ## ⭐️ News
 
+* [2026/1/28] Results of Qwen-Image-2512 and FLUX.2 dev are updated.
 * [2025/12/17] Results of GPT-Image-1.5, Seedream-4.5 and FLUX.2 max are updated.
-* [2025/11/23] Gemini-3-Pro-Image-Preview (Nano Banana Pro) achieves new SOTA! (72.7 strict score and 93.7 relaxed score)
+* [2025/11/23] Nano Banana Pro achieves new SOTA! (72.7 strict score and 93.7 relaxed score)
 * [2025/10/7] Results of HunyuanImage-3.0 are updated.
 * [2025/9/18] GenExam is released!
 
@@ -47,11 +48,13 @@ Exams are a fundamental test of expert-level intelligence and require integrated
 
 We introduce GenExam, the first benchmark for **multidisciplinary text-to-image exams**, featuring 1,000 samples across 10 subjects with exam-style prompts organized under a four-level taxonomy. Each problem is equipped with ground-truth images and fine-grained scoring points to enable a precise evaluation of semantic correctness and visual plausibility. 
 
-Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemini-2.5-Flash-Image achieve less than 15% strict scores, and most models yield almost 0%, suggesting the great challenge of our benchmark. By framing image generation as an exam, GenExam offers a rigorous assessment of models' ability to integrate knowledge, reasoning, and generation, providing insights on the path to general AGI.
+Experiments on 17 text-to-image and unified models demonstrate the great challenge of GenExam and the huge gap where open-source models consistently lag behind the leading closed-source ones. By framing image generation as an exam, GenExam offers a rigorous assessment of models' ability to integrate understanding, reasoning, and generation, providing insights on the path to intelligent generative models. Our benchmark and evaluation code will be released.
 
 <div align="center">
   <img src="assets/overview.png" alt="overview" width="100%">
+  <img src="assets/evaluation.png" alt="overview" width="100%">
 </div>
+
 
 ## 🚀 Leaderboard
 
@@ -64,12 +67,11 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
     <th>Geo</th><th>Comp</th><th>Eng</th><th>Econ</th>
     <th>Music</th><th>Hist</th><th>Overall</th>
   </tr>
-
   <tr>
     <th colspan="12" style="text-align:left">Closed-source Models</th>
   </tr>
   <tr>
-    <td>Gemini-3-Pro-Image-Preview (Nano Banana Pro)</td><td>55.6</td><td>75.2</td><td>60.2</td><td>75.6</td><td>75.8</td><td>65.7</td><td>71.2</td><td>88.3</td><td>61.5</td><td>97.6</td><td>72.7</td>
+    <td>Nano Banana Pro</td><td>55.6</td><td>75.2</td><td>60.2</td><td>75.6</td><td>75.8</td><td>65.7</td><td>71.2</td><td>88.3</td><td>61.5</td><td>97.6</td><td>72.7</td>
   </tr>
   <tr>
     <td>GPT-Image-1.5</td><td>26.5</td><td>46.0</td><td>39.0</td><td>56.4</td><td>60.6</td><td>36.3</td><td>44.1</td><td>42.9</td><td>29.2</td><td>51.2</td><td>43.2</td>
@@ -98,10 +100,18 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
   <tr>
     <td>FLUX.1 Kontext max</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
   </tr>
-
   <tr>
     <th colspan="12" style="text-align:left">Open-source T2I Models</th>
   </tr>
+
+<tr>
+    <td>FLUX.2 dev</td><td>2.6</td><td>1.8</td><td>4.6</td><td>3.8</td><td>3.0</td><td>1.0</td><td>2.7</td><td>1.3</td><td>0.0</td><td>0.0</td><td>2.1</td>
+  </tr>
+
+<tr>
+    <td>Qwen-Image-2512</td><td>0.0</td><td>2.7</td><td>0.8</td><td>1.3</td><td>6.1</td><td>0.0</td><td>4.5</td><td>0.0</td><td>0.0</td><td>0.0</td><td>1.5</td>
+  </tr>
+
   <tr>
     <td>Qwen-Image</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>3.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.3</td>
   </tr>
@@ -161,12 +171,11 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
     <th>Geo</th><th>Comp</th><th>Eng</th><th>Econ</th>
     <th>Music</th><th>Hist</th><th>Overall</th>
   </tr>
-
   <tr>
     <th colspan="12" style="text-align:left">Closed-source Models</th>
   </tr>
   <tr>
-    <td>Gemini-3-Pro-Image-Preview (Nano Banana Pro)</td><td>86.3</td><td>95.1</td><td>88.7</td><td>95.9</td><td>96.5</td><td>91.7</td><td>95.1</td><td>97.2</td><td>91.0</td><td>99.9</td><td>93.7</td>
+    <td>Nano Banana Pro</td><td>86.3</td><td>95.1</td><td>88.7</td><td>95.9</td><td>96.5</td><td>91.7</td><td>95.1</td><td>97.2</td><td>91.0</td><td>99.9</td><td>93.7</td>
   </tr>
   <tr>
     <td>GPT-Image-1.5</td><td>65.8</td><td>85.4</td><td>78.1</td><td>91.9</td><td>92.5</td><td>75.8</td><td>86.4</td><td>85.5</td><td>70.8</td><td>90.9</td><td>82.3</td>
@@ -197,9 +206,19 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
   </tr>
 
 
+
   <tr>
     <th colspan="12" style="text-align:left">Open-source T2I Models</th>
   </tr>
+
+<tr>
+    <td>FLUX.2 dev</td><td>31.6</td><td>42.7</td><td>33.2</td><td>54.8</td><td>62.6</td><td>31.1</td><td>48.9</td><td>43.6</td><td>33.4</td><td>47.5</td><td>42.9</td>
+  </tr>
+
+<tr>
+    <td>Qwen-Image-2512</td><td>27.9</td><td>41.3</td><td>23.2</td><td>44.4</td><td>56.6</td><td>24.1</td><td>42.9</td><td>32.3</td><td>28.3</td><td>37.0</td><td>35.8</td>
+  </tr>
+
   <tr>
     <td>Qwen-Image</td><td>18.9</td><td>26.3</td><td>15.3</td><td>32.1</td><td>49.6</td><td>18.9</td><td>32.0</td><td>20.3</td><td>23.4</td><td>38.6</td><td>27.5</td>
   </tr>
@@ -253,6 +272,7 @@ Experiments show that even state-of-the-art models such as GPT-Image-1 and Gemin
 <div align="center">
   <img src="assets/model_performance_comparison.png" width="100%">
 </div>
+
 
 ## 🛠️ Usage
 
@@ -405,9 +425,9 @@ python cal_score.py --mini --eval_results_dir ./eval_results
 For more examples, please refer to the appendix in our paper.
 
 <div align="center">
-  <img src="assets/math.png" alt="math" width="100%">
-  <img src="assets/music.png" alt="math" width="100%">
+  <img src="assets/examples.png" alt="math" width="100%">
 </div>
+
 
 
 ### Images Generated by Nano Banana Pro
@@ -424,6 +444,8 @@ For more examples, please refer to the appendix in our paper.
 ## 📃 License
 
 This project is released under the [MIT license](LICENSE).
+
+
 
 ## 🖊️ Citation
 
