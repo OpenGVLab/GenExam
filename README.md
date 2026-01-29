@@ -18,6 +18,9 @@
   <a href='https://huggingface.co/datasets/OpenGVLab/GenExam'>
     <img src='https://img.shields.io/badge/Huggingface-Data-blue?style=flat&logo=huggingface' alt='data img/data'>
   </a>
+  <a href='https://huggingface.co/datasets/OpenGVLab/GenExam_Gen_Images'>
+    <img src='https://img.shields.io/badge/Gallery-ModelResults-blue?style=flat&logo=huggingface' alt='data img/data'>
+  </a>
   <a href='#-leaderboard'>
     <img src='https://img.shields.io/badge/Rank-Leaderboard-blue?style=flat&logo=flipboard' alt='data img/data'>
   </a>
@@ -422,7 +425,7 @@ python cal_score.py --mini --eval_results_dir ./eval_results
 
 ## 🖼 Examples of Generated Images
 
-For more examples, please refer to the appendix in our paper.
+For more examples, please refer to the appendix in our paper and [this repo](https://huggingface.co/datasets/OpenGVLab/GenExam_Gen_Images).
 
 <div align="center">
   <img src="assets/examples.png" alt="math" width="100%">
