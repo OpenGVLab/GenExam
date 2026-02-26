@@ -39,8 +39,9 @@
 
 ## ⭐️ News
 
+* [2026/2/26] Result of Seedream 5.0 is updated.
 * [2026/1/28] Results of Qwen-Image-2512 and FLUX.2 dev are updated.
-* [2025/12/17] Results of GPT-Image-1.5, Seedream-4.5 and FLUX.2 max are updated.
+* [2025/12/17] Results of GPT-Image-1.5, Seedream 4.5 and FLUX.2 max are updated.
 * [2025/11/23] Nano Banana Pro achieves new SOTA! (72.7 strict score and 93.7 relaxed score)
 * [2025/10/7] Results of HunyuanImage-3.0 are updated.
 * [2025/9/18] GenExam is released!
@@ -75,6 +76,9 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
   </tr>
   <tr>
     <td>Nano Banana Pro</td><td>55.6</td><td>75.2</td><td>60.2</td><td>75.6</td><td>75.8</td><td>65.7</td><td>71.2</td><td>88.3</td><td>61.5</td><td>97.6</td><td>72.7</td>
+  </tr>
+  <tr>
+    <td>Seedream 5.0</td><td>47.0</td><td>38.9</td><td>38.1</td><td>44.2</td><td>45.5</td><td>45.1</td><td>55.9</td><td>62.3</td><td>35.4</td><td>29.3</td><td>44.2</td>
   </tr>
   <tr>
     <td>GPT-Image-1.5</td><td>26.5</td><td>46.0</td><td>39.0</td><td>56.4</td><td>60.6</td><td>36.3</td><td>44.1</td><td>42.9</td><td>29.2</td><td>51.2</td><td>43.2</td>
@@ -179,6 +183,9 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
   </tr>
   <tr>
     <td>Nano Banana Pro</td><td>86.3</td><td>95.1</td><td>88.7</td><td>95.9</td><td>96.5</td><td>91.7</td><td>95.1</td><td>97.2</td><td>91.0</td><td>99.9</td><td>93.7</td>
+  </tr>
+  <tr>
+    <td>Seedream 5.0</td><td>82.9</td><td>85.7</td><td>81.1</td><td>89.9</td><td>89.5</td><td>85.2</td><td>91.2</td><td>94.7</td><td>76.7</td><td>87.0</td><td>86.4</td>
   </tr>
   <tr>
     <td>GPT-Image-1.5</td><td>65.8</td><td>85.4</td><td>78.1</td><td>91.9</td><td>92.5</td><td>75.8</td><td>86.4</td><td>85.5</td><td>70.8</td><td>90.9</td><td>82.3</td>
