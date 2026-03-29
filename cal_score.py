@@ -54,12 +54,14 @@ def calculate_score(eval_results_dir, sampled_id_path=None):
         all_scores[data_name].append(scores)
     
     data_names = sorted(list(all_scores.keys()))
+    total_count = sum(len(scores) for scores in all_scores.values())
+    if total_count == 0:
+        return {}
     
     print("=" * 80)
     print("Each score dimension:")
     for key in all_score_keys:
-        score_sum = sum(score[key] for scores in all_scores.values() for score in scores)
-        score_avg = score_sum / sum(len(scores) for scores in all_scores.values())
+        score_avg = sum(score[key] for scores in all_scores.values() for score in scores) / total_count
         print(f"- {key}: {round(score_avg, 2)}")
 
     print("=" * 80)
@@ -74,7 +76,7 @@ def calculate_score(eval_results_dir, sampled_id_path=None):
             print(f"  {key}: {round(score_avg, 2)}")
     
     print("-" * 80)
-    print("Total number of eval results: ", sum(len(scores) for scores in all_scores.values()))
+    print("Total number of eval results: ", total_count)
     
     print("-" * 80)
     print("Strict score:")
@@ -84,8 +86,7 @@ def calculate_score(eval_results_dir, sampled_id_path=None):
             continue
         print(f"- {data_name}({len(scores)} samples): {round(sum(score['strict_score'] for score in scores) / len(scores) * 100, 1)}%", end=" ")
     
-    avg_strict_score = sum(sum(score['strict_score'] for score in scores) / len(scores) for scores in all_scores.values() if len(scores) > 0) / len(all_scores)
-    print(f"\nAverage strict score: {round(avg_strict_score * 100, 1)}%")
+
 
     print("-" * 80)
     print("Relaxed score:")
@@ -94,14 +95,18 @@ def calculate_score(eval_results_dir, sampled_id_path=None):
         if len(scores) == 0:
             continue
         print(f"- {data_name}({len(scores)} samples): {round(sum(score['relaxed_score'] for score in scores) / len(scores) * 100, 1)}%", end=" ")
-    avg_relaxed_score = sum(sum(score['relaxed_score'] for score in scores) / len(scores) for scores in all_scores.values() if len(scores) > 0) / len(all_scores)
-    print(f"\nAverage relaxed score: {round(avg_relaxed_score * 100, 1)}%")
-    
-    avg_semantic_correctness = sum(sum(score['semantic_correctness'] for score in scores) / len(scores) for scores in all_scores.values() if len(scores) > 0) / len(all_scores)
-    avg_spelling = sum(sum(score['spelling'] for score in scores) / len(scores) for scores in all_scores.values() if len(scores) > 0) / len(all_scores)
-    avg_readability = sum(sum(score['readability'] for score in scores) / len(scores) for scores in all_scores.values() if len(scores) > 0) / len(all_scores)
-    avg_logical_consistency = sum(sum(score['logical_consistency'] for score in scores) / len(scores) for scores in all_scores.values() if len(scores) > 0) / len(all_scores)
 
+    avg_strict_score = sum(score['strict_score'] for scores in all_scores.values() for score in scores) / total_count
+    avg_relaxed_score = sum(score['relaxed_score'] for scores in all_scores.values() for score in scores) / total_count
+    
+    print(f"\nAverage strict score: {round(avg_strict_score * 100, 1)}%")
+    print(f"Average relaxed score: {round(avg_relaxed_score * 100, 1)}%")
+
+    avg_semantic_correctness = sum(score['semantic_correctness'] for scores in all_scores.values() for score in scores) / total_count
+    avg_spelling = sum(score['spelling'] for scores in all_scores.values() for score in scores) / total_count
+    avg_readability = sum(score['readability'] for scores in all_scores.values() for score in scores) / total_count
+    avg_logical_consistency = sum(score['logical_consistency'] for scores in all_scores.values() for score in scores) / total_count
+    
     return {
         "strict_score": avg_strict_score,
         "relaxed_score": avg_relaxed_score,
