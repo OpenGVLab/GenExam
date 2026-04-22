@@ -76,7 +76,7 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
     <th colspan="12" style="text-align:left">Closed-source Models</th>
   </tr>
   <tr>
-    <td>GPT-Image-2    </td><td>50.3</td><td>79.6</td><td>69.5</td><td>89.1</td><td>84.8</td><td>73.5</td><td>79.32</td><td>83.1</td><td>64.6</td><td>82.9</td><td>74.6</td>
+    <td>GPT-Image-2    </td><td>50.3</td><td>79.6</td><td>69.5</td><td>89.1</td><td>84.8</td><td>73.5</td><td>79.3</td><td>83.1</td><td>64.6</td><td>82.9</td><td>74.6</td>
   </tr>
   <tr>
     <td>Nano Banana Pro</td><td>55.6</td><td>75.2</td><td>60.2</td><td>75.6</td><td>75.8</td><td>65.7</td><td>71.2</td><td>88.3</td><td>61.5</td><td>97.6</td><td>72.7</td>
