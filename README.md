@@ -26,6 +26,9 @@
   </a>
 
 </p>
+
+### ICML 2026
+
 </div>
 
 <br>
@@ -39,7 +42,8 @@
 
 ## ⭐️ News
 
-* [2026/4/22] GPT-Image-2 achieves new SOTA of 74.6 strict score and 93.8 relaxed score.
+* [2026/5/1] GenExam is accepted to **ICML 2026**.
+* [2026/4/22] GPT-Image-2 achieves new SOTA of **74.6 strict score** and 93.8 relaxed score.
 * [2026/2/26] Results of Seedream 5.0 and Nano Banana 2 are updated.
 * [2026/1/28] Results of Qwen-Image-2512 and FLUX.2 dev are updated.
 * [2025/12/17] Results of GPT-Image-1.5, Seedream 4.5 and FLUX.2 max are updated.
