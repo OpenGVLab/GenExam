@@ -42,7 +42,8 @@
 
 ## ⭐️ News
 
-* [2026/5/1] GenExam is accepted to **ICML 2026**.
+* [2026/5/27] Checkout our new benchmark [GRADE](https://grade-bench.github.io/)!
+* [2026/5/1] GenExam is accepted to **ICML 2026**!
 * [2026/4/22] GPT-Image-2 achieves new SOTA of **74.6 strict score** and 93.8 relaxed score.
 * [2026/2/26] Results of Seedream 5.0 and Nano Banana 2 are updated.
 * [2026/1/28] Results of Qwen-Image-2512 and FLUX.2 dev are updated.
@@ -165,7 +166,7 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
     <td>Show-o2-1.5B-HQ</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
   </tr>
   <tr>
-    <td>BLIP3o-NEXT-GRPO-Text-3</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
+    <td>BLIP3o-NEXT-GRPO-Text-3B</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
   </tr>
   <tr>
     <td>BLIP3o-8B</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
@@ -281,7 +282,7 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
     <td>Show-o2-1.5B-HQ</td><td>7.3</td><td>7.5</td><td>6.2</td><td>15.0</td><td>25.3</td><td>4.3</td><td>9.3</td><td>7.3</td><td>7.6</td><td>19.8</td><td>11.0</td>
   </tr>
   <tr>
-    <td>BLIP3o-NEXT-GRPO-Text-3</td><td>15.5</td><td>10.5</td><td>9.2</td><td>15.5</td><td>23.7</td><td>8.2</td><td>10.1</td><td>8.1</td><td>15.2</td><td>10.2</td><td>12.6</td>
+    <td>BLIP3o-NEXT-GRPO-Text-3B</td><td>15.5</td><td>10.5</td><td>9.2</td><td>15.5</td><td>23.7</td><td>8.2</td><td>10.1</td><td>8.1</td><td>15.2</td><td>10.2</td><td>12.6</td>
   </tr>
   <tr>
     <td>BLIP3o-8B</td><td>6.4</td><td>5.5</td><td>4.7</td><td>7.0</td><td>16.7</td><td>3.6</td><td>8.4</td><td>2.5</td><td>6.0</td><td>11.2</td><td>7.2</td>
