@@ -42,9 +42,10 @@
 
 ## ⭐️ News
 
+* [2026/9/23] Results of GPT-Image-2.5-sunburst (**new SoTA, 78.9 strict score**), GPT-Image-2.5-flare, Qwen-Image-3.0, and Qwen-Image-3.0-pro are updated.
 * [2026/5/27] Checkout our new benchmark [GRADE](https://grade-bench.github.io/)!
 * [2026/5/1] GenExam is accepted to **ICML 2026**!
-* [2026/4/22] GPT-Image-2 achieves new SOTA of **74.6 strict score** and 93.8 relaxed score.
+* [2026/4/22] GPT-Image-2 achieves new SOTA of 74.6 strict score and 93.8 relaxed score.
 * [2026/2/26] Results of Seedream 5.0 and Nano Banana 2 are updated.
 * [2026/1/28] Results of Qwen-Image-2512 and FLUX.2 dev are updated.
 * [2025/12/17] Results of GPT-Image-1.5, Seedream 4.5 and FLUX.2 max are updated.
@@ -81,11 +82,24 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
     <th colspan="12" style="text-align:left">Closed-source Models</th>
   </tr>
   <tr>
+    <td>GPT-Image-2.5-sunburst</td><td>60.9</td><td>78.8</td><td>71.2</td><td>89.7</td><td>86.4</td><td>77.5</td><td>89.2</td><td>88.3</td><td>69.2</td><td>87.8</td><td>78.9</td>
+  </tr>
+  <tr>
+    <td>GPT-Image-2.5-flare</td><td>64.9</td><td>78.8</td><td>63.6</td><td>89.7</td><td>81.8</td><td>74.5</td><td>80.2</td><td>68.8</td><td>63.1</td><td>80.5</td><td>74.8</td>
+  </tr>
+  <tr>
     <td>GPT-Image-2    </td><td>50.3</td><td>79.6</td><td>69.5</td><td>89.1</td><td>84.8</td><td>73.5</td><td>79.3</td><td>83.1</td><td>64.6</td><td>82.9</td><td>74.6</td>
   </tr>
   <tr>
     <td>Nano Banana Pro</td><td>55.6</td><td>75.2</td><td>60.2</td><td>75.6</td><td>75.8</td><td>65.7</td><td>71.2</td><td>88.3</td><td>61.5</td><td>97.6</td><td>72.7</td>
   </tr>
+  <tr>
+    <td>Qwen-Image-3.0</td><td>62.9</td><td>61.1</td><td>66.1</td><td>78.8</td><td>72.3</td><td>61.8</td><td>78.4</td><td>77.9</td><td>52.3</td><td>60.0</td><td>68.1</td>
+  </tr>
+  <tr>
+    <td>Qwen-Image-3.0-pro</td><td>59.6</td><td>72.6</td><td>56.8</td><td>79.5</td><td>63.1</td><td>68.6</td><td>69.4</td><td>81.8</td><td>53.8</td><td>61.0</td><td>67.5</td>
+  </tr>
+  <tr>
   <tr>
     <td>Nano Banana 2</td><td>56.3</td><td>74.3</td><td>52.5</td><td>66.0</td><td>69.7</td><td>56.9</td><td>67.6</td><td>63.6</td><td>50.8</td><td>82.9</td><td>64.1</td>
   </tr>
@@ -194,11 +208,24 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
     <th colspan="12" style="text-align:left">Closed-source Models</th>
   </tr>
   <tr>
+    <td>GPT-Image-2.5-sunburst</td><td>88.8</td><td>96.8</td><td>92.8</td><td>98.3</td><td>97.5</td><td>94.2</td><td>98.3</td><td>98.5</td><td>93.6</td><td>98.6</td><td>95.3</td>
+  </tr>
+  <tr>
+    <td>GPT-Image-2.5-flare</td><td>89.4</td><td>95.9</td><td>91.9</td><td>98.6</td><td>97.6</td><td>94.0</td><td>96.6</td><td>95.1</td><td>91.4</td><td>98.2</td><td>94.6</td>
+  </tr>
+  <tr>
     <td>GPT-Image-2</td><td>85.2</td><td>95.6</td><td>92.0</td><td>97.5</td><td>97.6</td><td>93.3</td><td>96.5</td><td>97.7</td><td>89.1</td><td>97.1</td><td>93.8</td>
   </tr>
   <tr>
     <td>Nano Banana Pro</td><td>86.3</td><td>95.1</td><td>88.7</td><td>95.9</td><td>96.5</td><td>91.7</td><td>95.1</td><td>97.2</td><td>91.0</td><td>99.9</td><td>93.7</td>
   </tr>
+  <tr>
+    <td>Qwen-Image-3.0</td><td>90.7</td><td>93.1</td><td>92.7</td><td>96.8</td><td>96.3</td><td>92.1</td><td>95.9</td><td>96.3</td><td>88.4</td><td>95.3</td><td>93.7</td>
+  </tr>
+  <tr>
+    <td>Qwen-Image-3.0-pro</td><td>90.0</td><td>94.7</td><td>90.7</td><td>97.6</td><td>95.6</td><td>94.3</td><td>95.2</td><td>95.4</td><td>87.1</td><td>96.3</td><td>93.7</td>
+  </tr>
+  <tr>
   <tr>
     <td>Nano Banana 2</td><td>87.8</td><td>95.7</td><td>90.0</td><td>95.2</td><td>94.8</td><td>88.8</td><td>95.8</td><td>94.2</td><td>86.9</td><td>97.3</td><td>92.6</td>
   </tr>
