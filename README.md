@@ -42,8 +42,9 @@
 
 ## ⭐️ News
 
+* [2026/9/24] Checkout our new dataset [DisciplineGen-1M](https://disciplinegen.github.io/)!
 * [2026/9/24] Results of GPT-Image-2.5-sunburst (**new SoTA, 78.9 strict score**), GPT-Image-2.5-flare, Qwen-Image-3.0, Qwen-Image-3.0-pro, and Seedream 5.0 Pro are updated.
-* [2026/5/27] Checkout our new benchmark [GRADE](https://grade-bench.github.io/)!
+* [2026/5/27] Checkout our new benchmark [GRADE](https://grade-bench.github.io/) (ECCV 2026 Oral)!
 * [2026/5/1] GenExam is accepted to **ICML 2026**!
 * [2026/4/22] GPT-Image-2 achieves new SOTA of 74.6 strict score and 93.8 relaxed score.
 * [2026/2/26] Results of Seedream 5.0 and Nano Banana 2 are updated.
