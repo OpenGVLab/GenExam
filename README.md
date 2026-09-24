@@ -42,7 +42,7 @@
 
 ## ⭐️ News
 
-* [2026/9/23] Results of GPT-Image-2.5-sunburst (**new SoTA, 78.9 strict score**), GPT-Image-2.5-flare, Qwen-Image-3.0, and Qwen-Image-3.0-pro are updated.
+* [2026/9/24] Results of GPT-Image-2.5-sunburst (**new SoTA, 78.9 strict score**), GPT-Image-2.5-flare, Qwen-Image-3.0, Qwen-Image-3.0-pro, and Seedream 5.0 Pro are updated.
 * [2026/5/27] Checkout our new benchmark [GRADE](https://grade-bench.github.io/)!
 * [2026/5/1] GenExam is accepted to **ICML 2026**!
 * [2026/4/22] GPT-Image-2 achieves new SOTA of 74.6 strict score and 93.8 relaxed score.
@@ -102,6 +102,9 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
   <tr>
   <tr>
     <td>Nano Banana 2</td><td>56.3</td><td>74.3</td><td>52.5</td><td>66.0</td><td>69.7</td><td>56.9</td><td>67.6</td><td>63.6</td><td>50.8</td><td>82.9</td><td>64.1</td>
+  </tr>
+  <tr>
+    <td>Seedream 5.0 Pro</td><td>54.3</td><td>54.9</td><td>45.8</td><td>57.7</td><td>53.0</td><td>54.9</td><td>60.4</td><td>63.6</td><td>55.4</td><td>29.3</td><td>54.3</td>
   </tr>
   <tr>
     <td>Seedream 5.0</td><td>47.0</td><td>38.9</td><td>38.1</td><td>44.2</td><td>45.5</td><td>45.1</td><td>55.9</td><td>62.3</td><td>35.4</td><td>29.3</td><td>44.2</td>
@@ -228,6 +231,9 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
   <tr>
   <tr>
     <td>Nano Banana 2</td><td>87.8</td><td>95.7</td><td>90.0</td><td>95.2</td><td>94.8</td><td>88.8</td><td>95.8</td><td>94.2</td><td>86.9</td><td>97.3</td><td>92.6</td>
+  </tr>
+  <tr>
+    <td>Seedream 5.0 Pro</td><td>86.2</td><td>90.6</td><td>86.2</td><td>92.9</td><td>93.7</td><td>89.1</td><td>93.2</td><td>94.8</td><td>84.6</td><td>88.8</td><td>90.0</td>
   </tr>
   <tr>
     <td>Seedream 5.0</td><td>82.9</td><td>85.7</td><td>81.1</td><td>89.9</td><td>89.5</td><td>85.2</td><td>91.2</td><td>94.7</td><td>76.7</td><td>87.0</td><td>86.4</td>
