@@ -42,8 +42,9 @@
 
 ## ⭐️ News
 
+
+* [2026/9/26] Results of GPT-Image-2.5-sunburst (**new SoTA, 78.9 strict score**), GPT-Image-2.5-flare, Qwen-Image-3.0, Qwen-Image-3.0-pro, Qwen-Image-2.1 and Seedream 5.0 Pro are updated.
 * [2026/9/24] Checkout our new dataset [DisciplineGen-1M](https://disciplinegen.github.io/)!
-* [2026/9/24] Results of GPT-Image-2.5-sunburst (**new SoTA, 78.9 strict score**), GPT-Image-2.5-flare, Qwen-Image-3.0, Qwen-Image-3.0-pro, and Seedream 5.0 Pro are updated.
 * [2026/5/27] Checkout our new benchmark [GRADE](https://grade-bench.github.io/) (ECCV 2026 Oral)!
 * [2026/5/1] GenExam is accepted to **ICML 2026**!
 * [2026/4/22] GPT-Image-2 achieves new SOTA of 74.6 strict score and 93.8 relaxed score.
@@ -114,6 +115,9 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
     <td>GPT-Image-1.5</td><td>26.5</td><td>46.0</td><td>39.0</td><td>56.4</td><td>60.6</td><td>36.3</td><td>44.1</td><td>42.9</td><td>29.2</td><td>51.2</td><td>43.2</td>
   </tr>
   <tr>
+    <td>Qwen-Image-3.0-pro (w/o PE)</td><td>16.6</td><td>21.2</td><td>12.7</td><td>9.6</td><td>12.5</td><td>12.7</td><td>18.0</td><td>18.2</td><td>6.2</td><td>23.7</td><td>14.8</td>
+  </tr>
+  <tr>
     <td>GPT-Image-1</td><td>8.0</td><td>13.2</td><td>13.5</td><td>22.8</td><td>15.9</td><td>10.3</td><td>13.1</td><td>13.0</td><td>9.3</td><td>2.4</td><td>12.1</td>
   </tr>
   <tr>
@@ -140,7 +144,9 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
   <tr>
     <th colspan="12" style="text-align:left">Open-source T2I Models</th>
   </tr>
-
+<tr>
+    <td>Qwen-Image-2.1</td><td>5.3</td><td>8.0</td><td>4.2</td><td>6.4</td><td>9.1</td><td>2.0</td><td>8.1</td><td>3.9</td><td>1.5</td><td>0.0</td><td>5.3</td>
+  </tr>
 <tr>
     <td>FLUX.2 dev</td><td>2.6</td><td>1.8</td><td>4.6</td><td>3.8</td><td>3.0</td><td>1.0</td><td>2.7</td><td>1.3</td><td>0.0</td><td>0.0</td><td>2.1</td>
   </tr>
@@ -243,6 +249,9 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
     <td>GPT-Image-1.5</td><td>65.8</td><td>85.4</td><td>78.1</td><td>91.9</td><td>92.5</td><td>75.8</td><td>86.4</td><td>85.5</td><td>70.8</td><td>90.9</td><td>82.3</td>
   </tr>
   <tr>
+    <td>Qwen-Image-3.0-pro (w/o PE)</td><td>57.5</td><td>70.8</td><td>53.8</td><td>68.0</td><td>75.5</td><td>47.2</td><td>70.0</td><td>66.7</td><td>55.3</td><td>73.8</td><td>62.9</td>
+  </tr>
+  <tr>
     <td>GPT-Image-1</td><td>52.0</td><td>66.4</td><td>53.4</td><td>74.6</td><td>73.9</td><td>55.6</td><td>65.5</td><td>65.8</td><td>52.6</td><td>67.4</td><td>62.6</td>
   </tr>
   <tr>
@@ -272,7 +281,9 @@ Experiments on 17 text-to-image and unified models demonstrate the great challen
   <tr>
     <th colspan="12" style="text-align:left">Open-source T2I Models</th>
   </tr>
-
+<tr>
+    <td>Qwen-Image-2.1</td><td>37.9</td><td>54.6</td><td>39.9</td><td>53.5</td><td>63.2</td><td>31.8</td><td>56.2</td><td>50.4</td><td>37.1</td><td>52.7</td><td>47.1</td>
+  </tr>
 <tr>
     <td>FLUX.2 dev</td><td>31.6</td><td>42.7</td><td>33.2</td><td>54.8</td><td>62.6</td><td>31.1</td><td>48.9</td><td>43.6</td><td>33.4</td><td>47.5</td><td>42.9</td>
   </tr>
